@@ -1,0 +1,14 @@
+PODS:
+  - ICTutorialOverlay (0.0.1)
+
+DEPENDENCIES:
+  - ICTutorialOverlay (from `..`)
+
+EXTERNAL SOURCES:
+  ICTutorialOverlay:
+    :path: ..
+
+SPEC CHECKSUMS:
+  ICTutorialOverlay: b5f4d21072407b8e8f334bdcf44836ed96413f6b
+
+COCOAPODS: 0.20.1

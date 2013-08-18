@@ -1,0 +1,90 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		08A7841517C1279600B6F81D /* ICTutorialOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICTutorialOverlay.h; sourceTree = "<group>"; };
+		08A7841617C1279600B6F81D /* ICTutorialOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICTutorialOverlay.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08A783DD17C1262A00B6F81D = {
+			isa = PBXGroup;
+			children = (
+				08A783E417C1263600B6F81D /* Classes */,
+				08A783E517C1264E00B6F81D /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		08A783E417C1263600B6F81D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08A7841517C1279600B6F81D /* ICTutorialOverlay.h */,
+				08A7841617C1279600B6F81D /* ICTutorialOverlay.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		08A783E517C1264E00B6F81D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		08A783DE17C1262A00B6F81D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 08A783E117C1262A00B6F81D /* Build configuration list for PBXProject "ICTutorialOverlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 08A783DD17C1262A00B6F81D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		08A783E217C1262A00B6F81D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		08A783E317C1262A00B6F81D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08A783E117C1262A00B6F81D /* Build configuration list for PBXProject "ICTutorialOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08A783E217C1262A00B6F81D /* Debug */,
+				08A783E317C1262A00B6F81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08A783DE17C1262A00B6F81D /* Project object */;
+}
