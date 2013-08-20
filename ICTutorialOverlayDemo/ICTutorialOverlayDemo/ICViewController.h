@@ -11,7 +11,6 @@
 #import "ICTutorialOverlay.h"
 
 @interface ICViewController : UIViewController
-<ICTutorialOverlayDelegate>
 
 @property (nonatomic, weak) IBOutlet UIButton *rectButton;
 @property (nonatomic, weak) IBOutlet UIButton *roundRectButton;

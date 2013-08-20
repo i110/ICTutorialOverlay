@@ -26,19 +26,15 @@ typedef enum {
 
 @end
 
-@class ICTutorialOverlay;
-@protocol ICTutorialOverlayDelegate <NSObject>
-
-@optional
-- (void)didShowTutorialOverlay:(ICTutorialOverlay*)overlay;
-- (void)didHideTutorialOverlay:(ICTutorialOverlay*)overlay;
-
-@end
-
 @interface ICTutorialOverlay : UIView
 
-@property (nonatomic) id<ICTutorialOverlayDelegate> delegate;
+@property (nonatomic) BOOL animated;
 @property (nonatomic) BOOL hideWhenTapped;
+@property (nonatomic, copy) void(^willShowCallback)();
+@property (nonatomic, copy) void(^didShowCallback)();
+@property (nonatomic, copy) void(^willHideCallback)();
+@property (nonatomic, copy) void(^didHideCallback)();
+@property (nonatomic, readonly) BOOL isShown;
 
 - (ICTutorialOverlayHole*)addHoleWithRect:(CGRect)rect form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent;
 - (ICTutorialOverlayHole*)addHoleWithView:(UIView*)view padding:(CGFloat)padding form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent;

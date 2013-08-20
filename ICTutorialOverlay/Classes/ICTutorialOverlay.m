@@ -6,6 +6,8 @@
 //
 //
 
+#define ANIMATION_DURATION 0.4f
+
 #import "ICTutorialOverlay.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -181,22 +183,74 @@
 
 - (void)show
 {
+    if (self.isShown) {
+        return;
+    }
+    
+    if (self.willShowCallback) {
+        self.willShowCallback();
+    }
+    
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     self.frame = window.bounds;
     [window addSubview:self];
     [window bringSubviewToFront:self];
 
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didShowTutorialOverlay:)]) {
-        [self.delegate didShowTutorialOverlay:self];
+    if (self.animated) {
+        self.alpha = 0.0f;
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^{
+            self.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                if (self.didShowCallback) {
+                    self.didShowCallback();
+                }
+            }
+        }];
+    } else {
+        if (self.didShowCallback) {
+            self.didShowCallback();
+        }
     }
+
 }
 
 - (void)hide
 {
-    [self removeFromSuperview];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didHideTutorialOverlay:)]) {
-        [self.delegate didHideTutorialOverlay:self];
+    if (! self.isShown) {
+        return;
     }
+    
+    if (self.willHideCallback) {
+        self.willHideCallback();
+    }
+    
+    if (self.animated) {
+        self.alpha = 1.0f;
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^{
+            self.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [self removeFromSuperview];
+                if (self.didHideCallback) {
+                    self.didHideCallback();
+                }
+            }
+        }];
+    } else {
+        [self removeFromSuperview];
+        if (self.didHideCallback) {
+            self.didHideCallback();
+        }
+    }
+
+    
+
+}
+
+- (BOOL)isShown
+{
+    return self.superview != nil;
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {

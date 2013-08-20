@@ -25,9 +25,20 @@
 - (IBAction)didRectButtonTapped:(id)sender
 {
     overlay = [[ICTutorialOverlay alloc] init];
-    overlay.delegate = self;
     overlay.hideWhenTapped = NO;
     [overlay addHoleWithView:self.rectButton padding:4.0f form:ICTutorialOverlayHoleFormRectangle transparentEvent:NO];
+    overlay.willShowCallback = ^{
+        NSLog(@"willShowCallback invoked");
+    };
+    overlay.didShowCallback = ^{
+        NSLog(@"didShowCallback invoked");
+    };
+    overlay.willHideCallback = ^{
+        NSLog(@"willHideCallback invoked");
+    };
+    overlay.didHideCallback = ^{
+        NSLog(@"didHideCallback invoked");
+    };
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 300, 300, 50)];
     label.backgroundColor = [UIColor clearColor];
@@ -47,15 +58,16 @@
 
 - (IBAction)didRoundRectButtonTapped:(id)sender
 {
-    if (overlay) {
+    if (overlay && overlay.isShown) {
         [overlay hide];
         return;
     }
     
     overlay = [[ICTutorialOverlay alloc] init];
-    overlay.delegate = self;
     overlay.hideWhenTapped = NO;
+    overlay.animated = YES;
     [overlay addHoleWithView:self.roundRectButton padding:4.0f form:ICTutorialOverlayHoleFormRoundedRectangle transparentEvent:YES];
+
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 170, 220, 150)];
     label.backgroundColor = [UIColor clearColor];
@@ -74,13 +86,12 @@
 
 - (IBAction)didCircleButtonTapped:(id)sender
 {
-    if (overlay) {
+    if (overlay && overlay.isShown) {
         [[[UIAlertView alloc] initWithTitle:nil message:@"You are already showing overlay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         return;
     }
     
     overlay = [[ICTutorialOverlay alloc] init];
-    overlay.delegate = self;
     overlay.hideWhenTapped = YES;
     [overlay addHoleWithView:self.circleButton padding:40.0f form:ICTutorialOverlayHoleFormCircle transparentEvent:YES];
     
@@ -99,18 +110,17 @@
     CGRect rect = CGRectMake((CGFloat)rand() / RAND_MAX * 300, (CGFloat)rand() / RAND_MAX * 300, 100, 100);
     
     overlay = [[ICTutorialOverlay alloc] init];
-    overlay.delegate = self;
     overlay.hideWhenTapped = YES;
     [overlay addHoleWithRect:rect form:ICTutorialOverlayHoleFormCircle transparentEvent:NO];
     [overlay show];
 }
 
 # pragma mark -
-# pragma mark ICTutorialOverlayDelegate
+# pragma mark helper
 
-- (void)didHideTutorialOverlay:(ICTutorialOverlay *)_overlay
+- (void)showAlert:(NSString*)message
 {
-    overlay = nil;
+    [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 @end
