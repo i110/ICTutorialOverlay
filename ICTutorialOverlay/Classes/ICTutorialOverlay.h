@@ -42,4 +42,6 @@ typedef enum {
 - (void)show;
 - (void)hide;
 
++ (ICTutorialOverlay*)showingOverlay;
+
 @end

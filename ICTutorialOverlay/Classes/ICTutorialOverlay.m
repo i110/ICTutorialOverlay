@@ -17,6 +17,12 @@
 
 @implementation ICTutorialOverlayHole
 
+static ICTutorialOverlay *showingOverlay;
++ (ICTutorialOverlay*)showingOverlay
+{
+    return showingOverlay;
+}
+
 - (UIBezierPath*)bezierPath
 {
     UIBezierPath *path;
@@ -187,6 +193,8 @@
         return;
     }
     
+    showingOverlay = self;
+    
     if (self.willShowCallback) {
         self.willShowCallback();
     }
@@ -220,6 +228,8 @@
     if (! self.isShown) {
         return;
     }
+    
+    showingOverlay = nil;
     
     if (self.willHideCallback) {
         self.willHideCallback();
