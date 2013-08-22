@@ -17,12 +17,6 @@
 
 @implementation ICTutorialOverlayHole
 
-static ICTutorialOverlay *showingOverlay;
-+ (ICTutorialOverlay*)showingOverlay
-{
-    return showingOverlay;
-}
-
 - (UIBezierPath*)bezierPath
 {
     UIBezierPath *path;
@@ -73,6 +67,11 @@ static ICTutorialOverlay *showingOverlay;
 
 @implementation ICTutorialOverlay
 
+static ICTutorialOverlay *showingOverlay;
++ (ICTutorialOverlay*)showingOverlay
+{
+    return showingOverlay;
+}
 
 - (void)initialize
 {
