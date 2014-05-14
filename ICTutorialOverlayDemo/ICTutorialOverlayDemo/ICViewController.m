@@ -92,15 +92,21 @@
     }
     
     overlay = [[ICTutorialOverlay alloc] init];
-    overlay.hideWhenTapped = YES;
-    [overlay addHoleWithView:self.circleButton padding:40.0f form:ICTutorialOverlayHoleFormCircle transparentEvent:YES];
+    overlay.hideWhenTapped = NO;
+    [overlay addHoleWithView:self.circleButton padding:24.0f form:ICTutorialOverlayHoleFormCircle transparentEvent:YES];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 300, 300, 80)];
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor whiteColor];
     label.numberOfLines = 0;
-    label.text = @"If you add hole using view, ignore events which happen at outside of the view.";
+    label.text = @"If you add a hole using view, ignore events which happen at outside of the view. i.e. You can't tap other buttons.";
     [overlay addSubview:label];
+    
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    closeButton.frame = CGRectMake(20, 370, 80, 40);
+    [closeButton addTarget:self action:@selector(didCloseButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [overlay addSubview:closeButton];
     
     [overlay show];
 }
