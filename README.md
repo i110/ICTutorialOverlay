@@ -34,6 +34,7 @@ label.text = @"You can place any views on the overlay";
 [overlay addSubview:label];
 
 [overlay show];
+```
 
 ## Suggestions, requests, feedback and acknowledgements
 
