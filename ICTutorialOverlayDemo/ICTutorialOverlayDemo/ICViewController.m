@@ -29,8 +29,6 @@
     overlay.hideWhenTapped = NO;
     [overlay addHoleWithView:self.rectButton padding:4.0f offset:CGSizeZero form:ICTutorialOverlayHoleFormRectangle transparentEvent:NO];
     
-    self.navigationItem.backBarButtonItem.customView;
-    
     // when using callbacks, you must use weak reference to avoid circular reference
     __weak ICViewController *weakSelf = self;
     overlay.willShowCallback = ^{
