@@ -37,7 +37,7 @@ typedef enum {
 @property (nonatomic, readonly) BOOL isShown;
 
 - (ICTutorialOverlayHole*)addHoleWithRect:(CGRect)rect form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent;
-- (ICTutorialOverlayHole*)addHoleWithView:(UIView*)view padding:(CGFloat)padding form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent;
+- (ICTutorialOverlayHole*)addHoleWithView:(UIView*)view padding:(CGFloat)padding offset:(CGSize)offset form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent;
 
 - (void)show;
 - (void)hide;

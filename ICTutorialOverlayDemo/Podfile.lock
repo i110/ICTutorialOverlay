@@ -1,5 +1,5 @@
 PODS:
-  - ICTutorialOverlay (0.0.1)
+  - ICTutorialOverlay (0.0.4)
 
 DEPENDENCIES:
   - ICTutorialOverlay (from `..`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  ICTutorialOverlay: b5f4d21072407b8e8f334bdcf44836ed96413f6b
+  ICTutorialOverlay: 4f9cf78b12007b45343fadcc6807e17200b4467d
 
-COCOAPODS: 0.20.1
+COCOAPODS: 0.32.1

@@ -110,7 +110,7 @@ static ICTutorialOverlay *showingOverlay;
     return hole;
 }
 
-- (ICTutorialOverlayHole*)addHoleWithView:(UIView*)view padding:(CGFloat)padding form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent
+- (ICTutorialOverlayHole*)addHoleWithView:(UIView*)view padding:(CGFloat)padding offset:(CGSize)offset form:(ICTutorialOverlayHoleForm)form transparentEvent:(BOOL)transparentEvent
 {
     UIView *rootView = view;
     while (rootView.superview) {
@@ -119,8 +119,8 @@ static ICTutorialOverlay *showingOverlay;
     CGRect rect = [view convertRect:view.bounds toView:rootView];
     
     CGSize paddingSize = [self calculatePaddingSizeWithRect:rect defaultPadding:padding form:form];
-    rect.origin.x -= paddingSize.width;
-    rect.origin.y -= paddingSize.height;
+    rect.origin.x += offset.width - paddingSize.width;
+    rect.origin.y += offset.height - paddingSize.height;
     rect.size.width += paddingSize.width * 2;
     rect.size.height += paddingSize.height * 2;
     
@@ -190,6 +190,10 @@ static ICTutorialOverlay *showingOverlay;
 {
     if (self.isShown) {
         return;
+    }
+    
+    if (showingOverlay) {
+        [showingOverlay hide];
     }
     
     showingOverlay = self;

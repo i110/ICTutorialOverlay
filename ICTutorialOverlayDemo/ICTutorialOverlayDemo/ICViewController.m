@@ -25,19 +25,25 @@
 - (IBAction)didRectButtonTapped:(id)sender
 {
     overlay = [[ICTutorialOverlay alloc] init];
+    overlay.animated = YES;
     overlay.hideWhenTapped = NO;
-    [overlay addHoleWithView:self.rectButton padding:4.0f form:ICTutorialOverlayHoleFormRectangle transparentEvent:NO];
+    [overlay addHoleWithView:self.rectButton padding:4.0f offset:CGSizeZero form:ICTutorialOverlayHoleFormRectangle transparentEvent:NO];
+    
+    self.navigationItem.backBarButtonItem.customView;
+    
+    // when using callbacks, you must use weak reference to avoid circular reference
+    __weak ICViewController *weakSelf = self;
     overlay.willShowCallback = ^{
-        NSLog(@"willShowCallback invoked");
+        NSLog(@"willShowCallback invoked by %@", NSStringFromClass(weakSelf.class));
     };
     overlay.didShowCallback = ^{
-        NSLog(@"didShowCallback invoked");
+        NSLog(@"didShowCallback invoked by %@", NSStringFromClass(weakSelf.class));
     };
     overlay.willHideCallback = ^{
-        NSLog(@"willHideCallback invoked");
+        NSLog(@"willHideCallback invoked by %@", NSStringFromClass(weakSelf.class));
     };
     overlay.didHideCallback = ^{
-        NSLog(@"didHideCallback invoked");
+        NSLog(@"didHideCallback invoked by %@", NSStringFromClass(weakSelf.class));
     };
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 300, 300, 50)];
@@ -66,7 +72,7 @@
     overlay = [[ICTutorialOverlay alloc] init];
     overlay.hideWhenTapped = NO;
     overlay.animated = YES;
-    [overlay addHoleWithView:self.roundRectButton padding:4.0f form:ICTutorialOverlayHoleFormRoundedRectangle transparentEvent:YES];
+    [overlay addHoleWithView:self.roundRectButton padding:8.0f offset:CGSizeZero form:ICTutorialOverlayHoleFormRoundedRectangle transparentEvent:YES];
 
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 170, 220, 150)];
@@ -93,7 +99,7 @@
     
     overlay = [[ICTutorialOverlay alloc] init];
     overlay.hideWhenTapped = NO;
-    [overlay addHoleWithView:self.circleButton padding:24.0f form:ICTutorialOverlayHoleFormCircle transparentEvent:YES];
+    [overlay addHoleWithView:self.circleButton padding:24.0f offset:CGSizeZero form:ICTutorialOverlayHoleFormCircle transparentEvent:YES];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 300, 300, 80)];
     label.backgroundColor = [UIColor clearColor];

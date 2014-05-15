@@ -10,5 +10,5 @@
 #define COCOAPODS_POD_AVAILABLE_ICTutorialOverlay
 #define COCOAPODS_VERSION_MAJOR_ICTutorialOverlay 0
 #define COCOAPODS_VERSION_MINOR_ICTutorialOverlay 0
-#define COCOAPODS_VERSION_PATCH_ICTutorialOverlay 1
+#define COCOAPODS_VERSION_PATCH_ICTutorialOverlay 4
 
