@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>694254E4-09A4-4497-B9A4-05701A60B5F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ICTutorialOverlayDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7DBD0DD5A557C5839CEC182E147EA2CF63452CB5</key>
+		<string>https://github.com/djbrooks111/ICTutorialOverlay.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ICTutorialOverlayDemo/ICTutorialOverlayDemo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7DBD0DD5A557C5839CEC182E147EA2CF63452CB5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/djbrooks111/ICTutorialOverlay.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7DBD0DD5A557C5839CEC182E147EA2CF63452CB5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7DBD0DD5A557C5839CEC182E147EA2CF63452CB5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ICTutorialOverlay</string>
+		</dict>
+	</array>
+</dict>
+</plist>

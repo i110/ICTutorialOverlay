@@ -2,6 +2,11 @@
 
 A utility for making "Overlay Tutorial"
 
+## ICTutorialOverlayDemo
+
+To run the demo, clone this repository or download as .zip and open ICTutorialOverlayDemo.xcworkspace
+It is very important to open the .xcworkspace file if you want to run the demo.
+
 ## Adding ICTutorialOverlay to your project
 
 ### Cocoapods
