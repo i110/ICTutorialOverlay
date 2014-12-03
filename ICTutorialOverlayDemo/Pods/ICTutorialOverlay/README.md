@@ -10,7 +10,7 @@ A utility for making "Overlay Tutorial"
 
 1.  Add ICTutorialOverlay to your Podfile `pod 'ICTutorialOverlay'`.
 2.  Install the pod(s) by running `pod install`.
-3.  Include ICTutorialOverlay to your files with `#import "ICTutorialOverlay.h"`.
+3.  Include ICTutorialOverlay to your files with `#import <ICTutorialOverlay/ICTutorialOverlay.h>`.
 
 ### Clone from Github
 
@@ -34,7 +34,6 @@ label.text = @"You can place any views on the overlay";
 [overlay addSubview:label];
 
 [overlay show];
-```
 
 ## Suggestions, requests, feedback and acknowledgements
 
