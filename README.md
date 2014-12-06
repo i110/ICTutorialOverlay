@@ -20,7 +20,7 @@ It is very important to open the .xcworkspace file if you want to run the demo.
 ### Clone from Github
 
 1.  Clone repository from github and copy files directly, or add it as a git submodule.
-2.  Add ICTutorialOverlay and RuntimeUtils (.h and .m) files to your project.
+2.  Add ICTutorialOverlay (.h and .m) files to your project.
 
 ### Example Usage
 
