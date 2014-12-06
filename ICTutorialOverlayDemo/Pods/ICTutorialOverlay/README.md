@@ -2,11 +2,6 @@
 
 A utility for making "Overlay Tutorial"
 
-## ICTutorialOverlayDemo
-
-To run the demo, clone this repository or download as .zip and open ICTutorialOverlayDemo.xcworkspace
-It is very important to open the .xcworkspace file if you want to run the demo.
-
 ## Adding ICTutorialOverlay to your project
 
 ### Cocoapods
@@ -15,7 +10,7 @@ It is very important to open the .xcworkspace file if you want to run the demo.
 
 1.  Add ICTutorialOverlay to your Podfile `pod 'ICTutorialOverlay'`.
 2.  Install the pod(s) by running `pod install`.
-3.  Include ICTutorialOverlay to your files with `#import "ICTutorialOverlay.h"`.
+3.  Include ICTutorialOverlay to your files with `#import <ICTutorialOverlay/ICTutorialOverlay.h>`.
 
 ### Clone from Github
 
@@ -39,7 +34,6 @@ label.text = @"You can place any views on the overlay";
 [overlay addSubview:label];
 
 [overlay show];
-```
 
 ## Suggestions, requests, feedback and acknowledgements
 
