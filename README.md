@@ -9,7 +9,7 @@ It is very important to open the .xcworkspace file if you want to run the demo.
 
 ## Adding ICTutorialOverlay to your project
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add ICTutorialOverlay to your project.
 
